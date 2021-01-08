@@ -21,7 +21,19 @@ func main() {
 	fn.ReverseInt(intArr)
 	fmt.Printf("%#v\n", intArr)
 
-	// sum
+	// use reduce to sum
 	sumOfArr := fn.ReduceInt(intArr, func(accm int, curr int) int { return accm + curr })
-	fmt.Println(sumOfArr)
+	fmt.Printf("sumOfArr: %d\n", sumOfArr)
+
+	// sum
+	sumOfArr2 := fn.SumInt(intArr...)
+	fmt.Printf("sumOfArr2: %d\n", sumOfArr2)
+
+	// min
+	minOfArr := fn.MinInt(intArr...)
+	fmt.Printf("minOfArr: %d\n", minOfArr)
+
+	// max
+	maxOfArr := fn.MaxInt(intArr...)
+	fmt.Printf("maxOfArr: %d\n", maxOfArr)
 }
