@@ -2,7 +2,7 @@ package fn
 
 import "github.com/cheekybits/genny/generic"
 
-//go:generate genny -in=$GOFILE -out=../fn/filter.go gen "FilterType=int,int8,int16,int32,int64,uint,uint8,uint16,uint32,uint64,uintptr,string,float32,float64,bool"
+//go:generate genny -in=$GOFILE -out=../fn/filter.go gen "FilterType=int,int64,byte,string,float32,float64"
 
 type FilterType generic.Type
 

@@ -14,36 +14,6 @@ func FilterInt(elements []int, fn func(int) bool) []int {
 	return filtered
 }
 
-func FilterInt8(elements []int8, fn func(int8) bool) []int8 {
-	var filtered []int8
-	for _, elem := range elements {
-		if fn(elem) {
-			filtered = append(filtered, elem)
-		}
-	}
-	return filtered
-}
-
-func FilterInt16(elements []int16, fn func(int16) bool) []int16 {
-	var filtered []int16
-	for _, elem := range elements {
-		if fn(elem) {
-			filtered = append(filtered, elem)
-		}
-	}
-	return filtered
-}
-
-func FilterInt32(elements []int32, fn func(int32) bool) []int32 {
-	var filtered []int32
-	for _, elem := range elements {
-		if fn(elem) {
-			filtered = append(filtered, elem)
-		}
-	}
-	return filtered
-}
-
 func FilterInt64(elements []int64, fn func(int64) bool) []int64 {
 	var filtered []int64
 	for _, elem := range elements {
@@ -54,58 +24,8 @@ func FilterInt64(elements []int64, fn func(int64) bool) []int64 {
 	return filtered
 }
 
-func FilterUint(elements []uint, fn func(uint) bool) []uint {
-	var filtered []uint
-	for _, elem := range elements {
-		if fn(elem) {
-			filtered = append(filtered, elem)
-		}
-	}
-	return filtered
-}
-
-func FilterUint8(elements []uint8, fn func(uint8) bool) []uint8 {
-	var filtered []uint8
-	for _, elem := range elements {
-		if fn(elem) {
-			filtered = append(filtered, elem)
-		}
-	}
-	return filtered
-}
-
-func FilterUint16(elements []uint16, fn func(uint16) bool) []uint16 {
-	var filtered []uint16
-	for _, elem := range elements {
-		if fn(elem) {
-			filtered = append(filtered, elem)
-		}
-	}
-	return filtered
-}
-
-func FilterUint32(elements []uint32, fn func(uint32) bool) []uint32 {
-	var filtered []uint32
-	for _, elem := range elements {
-		if fn(elem) {
-			filtered = append(filtered, elem)
-		}
-	}
-	return filtered
-}
-
-func FilterUint64(elements []uint64, fn func(uint64) bool) []uint64 {
-	var filtered []uint64
-	for _, elem := range elements {
-		if fn(elem) {
-			filtered = append(filtered, elem)
-		}
-	}
-	return filtered
-}
-
-func FilterUintptr(elements []uintptr, fn func(uintptr) bool) []uintptr {
-	var filtered []uintptr
+func FilterByte(elements []byte, fn func(byte) bool) []byte {
+	var filtered []byte
 	for _, elem := range elements {
 		if fn(elem) {
 			filtered = append(filtered, elem)
@@ -136,16 +56,6 @@ func FilterFloat32(elements []float32, fn func(float32) bool) []float32 {
 
 func FilterFloat64(elements []float64, fn func(float64) bool) []float64 {
 	var filtered []float64
-	for _, elem := range elements {
-		if fn(elem) {
-			filtered = append(filtered, elem)
-		}
-	}
-	return filtered
-}
-
-func FilterBool(elements []bool, fn func(bool) bool) []bool {
-	var filtered []bool
 	for _, elem := range elements {
 		if fn(elem) {
 			filtered = append(filtered, elem)

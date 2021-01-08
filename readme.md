@@ -51,6 +51,12 @@ cd templates && go generate
 
 ## types
 
+common types:
+
+```
+int,int64,byte,string,float32,float64
+```
+
 numberic:
 
 ```
