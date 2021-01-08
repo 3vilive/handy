@@ -6,9 +6,20 @@ import "github.com/cheekybits/genny/generic"
 
 type MaxType generic.Type
 
-func MaxMaxType(a, b MaxType) MaxType {
-	if a > b {
-		return a
+func MaxMaxType(values ...MaxType) MaxType {
+	var max MaxType
+
+	if len(values) == 0 {
+		return max
+	} else {
+		max = values[0]
 	}
-	return b
+
+	for i := range values {
+		if values[i] > max {
+			max = values[i]
+		}
+	}
+
+	return max
 }

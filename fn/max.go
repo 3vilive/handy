@@ -4,30 +4,74 @@
 
 package fn
 
-func MaxInt(a, b int) int {
-	if a > b {
-		return a
+func MaxInt(values ...int) int {
+	var max int
+
+	if len(values) == 0 {
+		return max
+	} else {
+		max = values[0]
 	}
-	return b
+
+	for i := range values {
+		if values[i] > max {
+			max = values[i]
+		}
+	}
+
+	return max
 }
 
-func MaxInt64(a, b int64) int64 {
-	if a > b {
-		return a
+func MaxInt64(values ...int64) int64 {
+	var max int64
+
+	if len(values) == 0 {
+		return max
+	} else {
+		max = values[0]
 	}
-	return b
+
+	for i := range values {
+		if values[i] > max {
+			max = values[i]
+		}
+	}
+
+	return max
 }
 
-func MaxFloat32(a, b float32) float32 {
-	if a > b {
-		return a
+func MaxFloat32(values ...float32) float32 {
+	var max float32
+
+	if len(values) == 0 {
+		return max
+	} else {
+		max = values[0]
 	}
-	return b
+
+	for i := range values {
+		if values[i] > max {
+			max = values[i]
+		}
+	}
+
+	return max
 }
 
-func MaxFloat64(a, b float64) float64 {
-	if a > b {
-		return a
+func MaxFloat64(values ...float64) float64 {
+	var max float64
+
+	if len(values) == 0 {
+		return max
+	} else {
+		max = values[0]
 	}
-	return b
+
+	for i := range values {
+		if values[i] > max {
+			max = values[i]
+		}
+	}
+
+	return max
 }

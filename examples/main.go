@@ -17,6 +17,10 @@ func main() {
 	intArr = fn.MapIntToInt(intArr, func(i int) int { return i * 2 })
 	fmt.Printf("%#v\n", intArr)
 
+	// reverse it
+	fn.ReverseInt(intArr)
+	fmt.Printf("%#v\n", intArr)
+
 	// sum
 	sumOfArr := fn.ReduceInt(intArr, func(accm int, curr int) int { return accm + curr })
 	fmt.Println(sumOfArr)

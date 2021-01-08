@@ -6,9 +6,17 @@ import "github.com/cheekybits/genny/generic"
 
 type MinType generic.Type
 
-func MinMinType(a, b MinType) MinType {
-	if a < b {
-		return a
+func MinMinType(values ...MinType) MinType {
+	var min MinType
+	if len(values) == 0 {
+		return min
+	} else {
+		min = values[0]
 	}
-	return b
+	for i := range values {
+		if values[i] < min {
+			min = values[i]
+		} 
+	}
+	return min
 }

@@ -4,30 +4,62 @@
 
 package fn
 
-func MinInt(a, b int) int {
-	if a < b {
-		return a
+func MinInt(values ...int) int {
+	var min int
+	if len(values) == 0 {
+		return min
+	} else {
+		min = values[0]
 	}
-	return b
+	for i := range values {
+		if values[i] < min {
+			min = values[i]
+		}
+	}
+	return min
 }
 
-func MinInt64(a, b int64) int64 {
-	if a < b {
-		return a
+func MinInt64(values ...int64) int64 {
+	var min int64
+	if len(values) == 0 {
+		return min
+	} else {
+		min = values[0]
 	}
-	return b
+	for i := range values {
+		if values[i] < min {
+			min = values[i]
+		}
+	}
+	return min
 }
 
-func MinFloat32(a, b float32) float32 {
-	if a < b {
-		return a
+func MinFloat32(values ...float32) float32 {
+	var min float32
+	if len(values) == 0 {
+		return min
+	} else {
+		min = values[0]
 	}
-	return b
+	for i := range values {
+		if values[i] < min {
+			min = values[i]
+		}
+	}
+	return min
 }
 
-func MinFloat64(a, b float64) float64 {
-	if a < b {
-		return a
+func MinFloat64(values ...float64) float64 {
+	var min float64
+	if len(values) == 0 {
+		return min
+	} else {
+		min = values[0]
 	}
-	return b
+	for i := range values {
+		if values[i] < min {
+			min = values[i]
+		}
+	}
+	return min
 }
