@@ -2,7 +2,7 @@
 // Any changes will be lost if this file is regenerated.
 // see https://github.com/cheekybits/genny
 
-package set
+package collections
 
 type IntSet struct {
 	m map[int]struct{}
