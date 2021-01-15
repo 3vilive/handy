@@ -37,3 +37,42 @@ func (s *SetTypeSet) Elements() []SetType {
 
 	return elements
 }
+
+func (s *SetTypeSet) Len() int {
+	return len(s.m)
+}
+
+func (s *SetTypeSet) IsEmpty() bool {
+	return len(s.m) == 0
+}
+
+func (s *SetTypeSet) Diff(other *SetTypeSet) *SetTypeSet {
+	diff := NewSetTypeSet()
+	for elem := range s.m {
+		if !other.Contain(elem) {
+			diff.Add(elem)
+		}
+	}
+	return diff
+}
+
+func (s *SetTypeSet) Intersection(other *SetTypeSet) *SetTypeSet {
+	intersection := NewSetTypeSet()
+	for elem := range s.m {
+		if other.Contain(elem) {
+			intersection.Add(elem)
+		}
+	}
+	return intersection
+}
+
+func (s *SetTypeSet) Union(other *SetTypeSet) *SetTypeSet {
+	union := NewSetTypeSet()
+	for elem := range s.m {
+		union.Add(elem)
+	}
+	for elem := range other.m {
+		union.Add(elem)
+	}
+	return union
+}

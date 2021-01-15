@@ -36,6 +36,45 @@ func (s *IntSet) Elements() []int {
 	return elements
 }
 
+func (s *IntSet) Len() int {
+	return len(s.m)
+}
+
+func (s *IntSet) IsEmpty() bool {
+	return len(s.m) == 0
+}
+
+func (s *IntSet) Diff(other *IntSet) *IntSet {
+	diff := NewIntSet()
+	for elem := range s.m {
+		if !other.Contain(elem) {
+			diff.Add(elem)
+		}
+	}
+	return diff
+}
+
+func (s *IntSet) Intersection(other *IntSet) *IntSet {
+	intersection := NewIntSet()
+	for elem := range s.m {
+		if other.Contain(elem) {
+			intersection.Add(elem)
+		}
+	}
+	return intersection
+}
+
+func (s *IntSet) Union(other *IntSet) *IntSet {
+	union := NewIntSet()
+	for elem := range s.m {
+		union.Add(elem)
+	}
+	for elem := range other.m {
+		union.Add(elem)
+	}
+	return union
+}
+
 type Int64Set struct {
 	m map[int64]struct{}
 }
@@ -68,6 +107,45 @@ func (s *Int64Set) Elements() []int64 {
 	return elements
 }
 
+func (s *Int64Set) Len() int {
+	return len(s.m)
+}
+
+func (s *Int64Set) IsEmpty() bool {
+	return len(s.m) == 0
+}
+
+func (s *Int64Set) Diff(other *Int64Set) *Int64Set {
+	diff := NewInt64Set()
+	for elem := range s.m {
+		if !other.Contain(elem) {
+			diff.Add(elem)
+		}
+	}
+	return diff
+}
+
+func (s *Int64Set) Intersection(other *Int64Set) *Int64Set {
+	intersection := NewInt64Set()
+	for elem := range s.m {
+		if other.Contain(elem) {
+			intersection.Add(elem)
+		}
+	}
+	return intersection
+}
+
+func (s *Int64Set) Union(other *Int64Set) *Int64Set {
+	union := NewInt64Set()
+	for elem := range s.m {
+		union.Add(elem)
+	}
+	for elem := range other.m {
+		union.Add(elem)
+	}
+	return union
+}
+
 type StringSet struct {
 	m map[string]struct{}
 }
@@ -98,4 +176,43 @@ func (s *StringSet) Elements() []string {
 	}
 
 	return elements
+}
+
+func (s *StringSet) Len() int {
+	return len(s.m)
+}
+
+func (s *StringSet) IsEmpty() bool {
+	return len(s.m) == 0
+}
+
+func (s *StringSet) Diff(other *StringSet) *StringSet {
+	diff := NewStringSet()
+	for elem := range s.m {
+		if !other.Contain(elem) {
+			diff.Add(elem)
+		}
+	}
+	return diff
+}
+
+func (s *StringSet) Intersection(other *StringSet) *StringSet {
+	intersection := NewStringSet()
+	for elem := range s.m {
+		if other.Contain(elem) {
+			intersection.Add(elem)
+		}
+	}
+	return intersection
+}
+
+func (s *StringSet) Union(other *StringSet) *StringSet {
+	union := NewStringSet()
+	for elem := range s.m {
+		union.Add(elem)
+	}
+	for elem := range other.m {
+		union.Add(elem)
+	}
+	return union
 }
